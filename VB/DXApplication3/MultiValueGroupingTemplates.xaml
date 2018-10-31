@@ -5,7 +5,6 @@
     xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys"
     xmlns:local="clr-namespace:DXApplication3">
 
-
     <Style x:Key="cellStyle">
         <Setter Property="TextBlock.FontWeight">
             <Setter.Value>

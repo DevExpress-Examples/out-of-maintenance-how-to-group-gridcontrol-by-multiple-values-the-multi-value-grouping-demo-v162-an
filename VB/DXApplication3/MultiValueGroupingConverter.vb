@@ -1,13 +1,10 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports System.Linq
-Imports System.Text
-Imports System.Threading.Tasks
+Imports System
 Imports System.Windows
 Imports System.Windows.Data
 Imports System.Windows.Markup
 
 Namespace DXApplication3
+
     Public Class PercentCompleteToFontWeightConverter
         Inherits MarkupExtension
         Implements IValueConverter
@@ -16,12 +13,12 @@ Namespace DXApplication3
             Return Me
         End Function
 
-        Private Function IValueConverter_Convert(ByVal value As Object, ByVal targetType As Type, ByVal parameter As Object, ByVal culture As System.Globalization.CultureInfo) As Object Implements IValueConverter.Convert
-            Dim percentComplete As Double = Convert.ToDouble(value)
+        Private Function Convert(ByVal value As Object, ByVal targetType As Type, ByVal parameter As Object, ByVal culture As Globalization.CultureInfo) As Object Implements IValueConverter.Convert
+            Dim percentComplete As Double = System.Convert.ToDouble(value)
             Return If(0 < percentComplete AndAlso percentComplete < 100, FontWeights.Bold, FontWeights.Normal)
         End Function
 
-        Private Function IValueConverter_ConvertBack(ByVal value As Object, ByVal targetType As Type, ByVal parameter As Object, ByVal culture As System.Globalization.CultureInfo) As Object Implements IValueConverter.ConvertBack
+        Private Function ConvertBack(ByVal value As Object, ByVal targetType As Type, ByVal parameter As Object, ByVal culture As Globalization.CultureInfo) As Object Implements IValueConverter.ConvertBack
             Throw New NotImplementedException()
         End Function
     End Class
